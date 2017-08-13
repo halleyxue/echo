@@ -1,0 +1,10 @@
+import sys
+
+if __name__ == "__main__":
+    n = int(sys.stdin.readline().strip())
+    arrya = sys.stdin.readline().strip().split(' ')
+    aryb = []
+    for i in xrange(0, n):
+        aryb.append(arrya[i])
+        aryb.reverse()
+    print ' '.join(aryb)
