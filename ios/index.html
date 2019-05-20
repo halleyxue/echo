@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://sal.creditcard.citicbank.com/app.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>江渝信用卡APP下载</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .bg_wrap{
+            height:100%;
+            background: url(bg.png) no-repeat;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            border-top:1px solid #fff;
+            position:relative;
+        }
+        .title_p{
+            margin-top: 20px;
+            color:#fff;
+            font-size: 32px;
+            text-align: center;
+        }
+        .title_text{
+            margin-top: 10px;
+            color:#fff;
+            font-size: 16px;
+            text-align: center;
+        }
+        .iphoneImg{
+            width:46%;
+            height:46%;
+            margin-left: 27%;
+            margin-top: 10px;
+        }
+        .btn{
+            margin-top: 10px;
+            position:absolute;
+            bottom:20px;
+        }
+        .imgBtn{
+            width:40%;
+            text-align: center;
+            margin-left: 5%;
+            float:left;
+        }
+        .imgBtn1{
+            width:40%;
+            text-align: center;
+            margin-right: 5%;
+            float:right;
+        }
+        .mark{
+            position: fixed;
+            z-index: 1000;
+            background-color: #000;
+            opacity: .8;
+            height: 1000px;
+            width: 100%;
+            top: 0;
+        }
+        .tips{
+            background: url(img/tips.png) no-repeat;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 90%;
+            height: 20%;
+            margin-top: 35px;
+            margin-left: 5%;
+        }
+        @media screen and (max-width: 320px){
+        	.iphoneImg{
+                width:40%;
+                height:40%;
+                margin-left: 30%;
+                margin-top: 20px;
+            }
+            .btn{
+                margin-top: 10px;
+            }
+        }
+    </style>
+ 
+</head>
+<body>
+    <div class="bg_wrap" id="wrapper" style="height: 708px;">
+        <p class="title_p">江渝信用卡APP</p>
+        <p class="title_text">江渝信用卡APP 快速便捷</p>
+        <img class="iphoneImg" src="iPhone6.png" alt="">
+        <div class="btn">
+            <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/halleyxue/echo/master/ios/manifest.plist"><img class="imgBtn" src="iphone1.png" alt=""></a>
+            <img class="imgBtn1" src="android1.png" alt="" onclick="tips_alert()">
+        </div>
+    </div>
+    <div id="mark" class="mark" style="display:none" onclick="delTips()">
+        <div class="tips"></div>
+    </div>
+
+<script>
+    window.onload=function(){
+        //var sideHeight = window.screen.availHeight;
+        document.body.addEventListener('touchmove', function (event) {
+            event.preventDefault();
+        }, false);
+        var sideHeight = document.documentElement.clientHeight;
+        
+            document.getElementById("wrapper").style.height=(sideHeight-1)+"px";
+       
+        
+        //if(isWeiXin()){
+            //document.getElementById("mark").style.display="block";
+            //setTimeout(function(){ document.getElementById("mark").style.display="none";},3000);
+        //}
+        function isWeiXin1 () {
+            var ua  = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i)=="micromessenger"){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
+    function tips_alert(){
+        if(isWeiXin()){
+            document.getElementById("mark").style.display="block";
+        }else{
+            window.location.href="https://emip.cqrcb.com:11000/cqrcb_emip.apk";
+        }
+        function isWeiXin () {
+            var ua  = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i)=="micromessenger"){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
+    function delTips(){
+    	document.getElementById("mark").style.display="none";
+    }
+</script>
+</body></html>
